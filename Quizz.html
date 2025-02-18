@@ -1,0 +1,108 @@
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.answerbutton
+{
+   border-style: solid;
+   width:500px;
+   height:300px;
+   padding-top:30px;
+}
+/* #main
+{
+    
+    display:flex;
+    justify-self:center;
+} */
+
+
+button{
+    width:300px;
+}
+    </style>
+</head>
+<body>
+    <div id="main">
+    <div id="id1">
+     <h1>sample quiz</h1>    
+    </div>
+    <div id="question">
+        <h1>write questions here</h1>
+    </div>
+    <div class="answerbutton">
+    <button  id="bt1">ANSWER1</button>
+    <br>
+    <br>
+    <button  id="bt2">ANSWER2</button>
+    <br>
+    <br>
+    <button  id="bt3">ANSWER3</button>
+    <br>
+    <br>
+    <button  id="bt4">ANSWER4</button>
+    <br>
+    <br>
+    <button onclick="nextqes()" id="bt5"> NEXT</button>
+    <div id="result"> </div>
+    </div>
+
+
+</div>
+<script>
+    let questions=[{question:"1.what is colour of apple",option:["Red","blue","green","black"],answer:"Red"},
+    {
+    question:"2.what is colour of  sky",option:["orange","red","blue","black"],answer:"blue"},
+    {
+    question:"3.what is colour of colour of mango",option:["orange","red","yellow","black"],answer:"yellow"},
+    {
+    question:"4.what is colour of  milk",option:["orange","red","blue","white"],answer:"white"},
+    {
+    question:"5.what is colour of banana ",option:["yellow","red","blue","black"],answer:"yellow"}]                 
+    let count=0;
+    let score=0;
+    display();
+     function display()
+     {
+       let t=document.getElementById("question");
+       t.textContent=questions[count].question;
+       for(let i=0;i<questions[count].option.length;i++)
+       {
+        let p=document.getElementById("bt"+(i+1));
+        p.textContent=questions[count].option[i];
+        }
+    } 
+    function nextqes()
+    {
+        count++;
+        display();
+       
+    }
+    document.getElementById("bt1").addEventListener('click',vit);
+    document.getElementById("bt2").addEventListener('click',vit);
+    document.getElementById("bt3").addEventListener('click',vit);
+    document.getElementById("bt4").addEventListener('click',vit);
+    function vit(event)
+    {
+        let p=event.target.id
+         if(questions[count].answer===document.getElementById(p).textContent)
+         {
+            document.getElementById("result").textContent="correct";
+            score++;
+         }
+         else
+         {
+            document.getElementById("result").textContent="wrong";
+         }
+         if(count===questions.length-1)
+         {
+              document.getElementById("result").textContent="your score is="+score;
+              
+         }
+     }
+</script>
+</body>
+</html>

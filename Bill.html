@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #mainframe
+       {
+        border:5px;
+        border-style:solid;
+        height:270px;
+        width:400px;
+        padding-left: 30px;
+        margin:auto;
+       }
+       span
+       {
+        font-size:20px
+       }
+    
+    </style>
+</head>
+<body>
+    <div id="mainframe">
+    <h1>BILL PAYMENT</h1>
+    <span>Idly</span> <button id="bt1">+</button>
+    <br>
+    <span > Vada</span> <button id="bt2">+</button>
+    <br>
+    <span> Dosa</span>  <button id="bt3">+</button>
+    <br>
+    <span >Sambar Idly</span> <button id="bt4">+</button>
+    <br>
+    <span > Plain Dosa</span> <button id="bt5">+</button>
+    <br>
+    <span > Butter Dosa</span> <button id="bt6">+</button>
+    <br>
+    <br>
+    <button id="bt7"> calculate</button>
+    <input type="text" readonly id="inp">
+    <button id="decrese"> -</button>
+    <div id="result"></div>
+    </div>
+    <script>
+    
+    let h=document.getElementById("bt1");
+    h.onclick=function()
+    {
+     
+        let deo=document.getElementById("result");
+       let mn=document.createElement("br");
+       deo.appendChild(mn);
+       deo.innerText+="Idly:45";
+       
+       let bm=document.getElementById("inp");
+        bm.value+=45+ "+";
+        
+    }
+    let k=document.getElementById("bt2")
+    k.onclick=function()
+    {
+        let balu2=document.getElementById("result"); 
+        let madhu=document.createElement("br");
+        balu2.appendChild(madhu);
+        balu2.innerText+="Vada:50";
+        let nee=document.getElementById("inp");
+        nee.value+=50+"+";
+    }
+    let p=document.getElementById("bt3")
+    p.onclick=function()
+    {
+      let ope=document.getElementById("result");
+      let nj=document.createElement("br");
+        ope.appendChild(nj);
+        ope.innerText+="Dosa:60";
+        let bo=document.getElementById("inp");
+        bo.value+=60+"+";
+    }
+    let l=document.getElementById("bt4")
+    l.onclick=function()
+    {
+        let ope=document.getElementById("result");
+        let nj=document.createElement("br");
+        ope.appendChild(nj);
+        ope.innerText+="Sambar Idly:70";
+        let vi=document.getElementById("inp")
+        vi.value+=70+"+";
+    }
+    let o=document.getElementById("bt5")
+    o.onclick=function()
+    {
+        let ope=document.getElementById("result");
+        let nj=document.createElement("br");
+        ope.appendChild(nj);
+        ope.innerText+="Plain dosa:80";
+        v=document.getElementById("inp");
+        v.value+=80+"+";
+    }
+    let m=document.getElementById("bt6")
+    m.onclick=function()
+    {
+        let ope=document.getElementById("result");
+        let nj=document.createElement("br");
+        ope.appendChild(nj);
+        ope.innerText+="Butter dosa:45";
+        let r=document.getElementById("inp");
+        r.value+=45+"+"
+    }
+    let results=document.getElementById("bt7");
+    results.onclick=function()
+    {
+        
+        let vittal=document.getElementById("inp").value;
+        let manu=vittal.substring(0,vittal.length-1);
+        document.getElementById("inp").value=eval(manu);
+   }
+   let def=document.getElementById("decrese");
+   def.onclick=function()
+   {
+    let u=document.getElementById("inp").value;
+    let bet=u.substring(0,u.length-3);
+    document.getElementById('inp').value=bet;
+    let t=document.getElementById("result");
+    t.removeChild(t.lastChild);
+    t.removeChild(t.lastChild);
+   }
+ </script>
+</body>
+</html>
